@@ -46,5 +46,5 @@ cd ..
 cd void-mklive-master
 sudo ./mklive.sh -r ../void-packages-master/hostdir/binpkgs -p "$PACKAGES" -I ../dir
 mv *.iso ../../ && cd ../..
-exit
+
 sudo rm -rf setup
