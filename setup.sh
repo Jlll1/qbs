@@ -32,7 +32,7 @@ cp -rf dotfiles-master/void-packages/* void-packages-master/srcpkgs/
 rm -rf dotfiles-master/void-packages/
 
 mkdir -p dir/home/rb
-cp -rf dotfiles-master/.[^.]* dir/home/rb/
+find dotfiles-master/ -name '.*' -exec cp -r {} dir/home/rb/ \;
 rm -rf dotfiles-master
 
 cd void-packages-master
