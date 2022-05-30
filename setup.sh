@@ -1,7 +1,5 @@
 #!/bin/sh
 
-TARGET_ARCH=x86_64
-
 VOID_MKLIVE="https://github.com/void-linux/void-mklive/archive/master.tar.gz"
 VOID_PACKAGES="https://github.com/void-linux/void-packages/archive/master.tar.gz"
 DOTFILES="https://github.com/Jlll1/dotfiles/archive/master.tar.gz"
@@ -41,12 +39,12 @@ cd void-packages-master
 ./xbps-src binary-bootstrap
 for PKG in $SRC_PKGS
 do
-  ./xbps-src -j8 -a $TARGET_ARCH pkg $PKG
+  ./xbps-src -j8 pkg $PKG
 done
 cd ..
 
 cd void-mklive-master
-sudo ./mklive.sh -a $TARGET_ARCH -r ../void-packages-master/hostdir/binpkgs -p "$PACKAGES" -I ../dir
+sudo ./mklive.sh -r ../void-packages-master/hostdir/binpkgs -p "$PACKAGES" -I ../dir
 mv *.iso ../../ && cd ../..
 exit
 sudo rm -rf setup
