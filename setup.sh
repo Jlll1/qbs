@@ -7,10 +7,10 @@ VOID_PACKAGES="https://github.com/void-linux/void-packages/archive/master.tar.gz
 DOTFILES="https://github.com/Jlll1/dotfiles/archive/master.tar.gz"
 
 BASE_PKGS="dialog cryptsetup lvm2 mdadm void-docs-browse grub-x86_64-efi"
-ESSENTIAL_PKGS="pulseaudio pavucontrol xorg alacritty"
-MEDIA_PKGS="qutebrowser mpv"
-DEV_PKGS="make git neovim nodejs vscode go gcc"
-MISC_PKGS="curl"
+ESSENTIAL_PKGS="pulseaudio pavucontrol xorg alacritty keepassxc"
+MEDIA_PKGS="qutebrowser mpv firefox evince feh kolourpaint"
+DEV_PKGS="make git neovim nodejs yarn vscode go gcc gdb"
+MISC_PKGS="curl flameshot"
 SRC_PKGS="dmenu dwm"
 PACKAGES="$BASE_PKGS $ESSENTIAL_PKGS $MEDIA_PKGS $DEV_PKGS $MISC_PKGS $SRC_PKGS"
 
@@ -48,4 +48,5 @@ cd ..
 cd void-mklive-master
 sudo ./mklive.sh -a $TARGET_ARCH -r ../void-packages-master/hostdir/binpkgs -p "$PACKAGES" -I ../dir
 mv *.iso ../../ && cd ../..
+exit
 sudo rm -rf setup
